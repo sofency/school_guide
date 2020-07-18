@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"></plugin>
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://106.12.208.167:3306/school_guide"
+                        userId="root"
+                        password="!1998Xhfxhf">
+            <property name="serverTimezone" value="GMT"/>
+            <property name="nullCatalogMeansCurrent" value="true"/>
+        </jdbcConnection>
+
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.xpu.school_guide.pojo" targetProject="src\main\java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mapper"  targetProject="src\main\resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.xpu.school_guide.mapper" targetProject="src\main\java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+<!--        <table tableName="admin_info" domainObjectName="AdminInfo" ></table>-->
+<!--        <table tableName="base_user_info" domainObjectName="BaseUserInfo" ></table>-->
+<!--        <table tableName="colleges" domainObjectName="Colleges" ></table>-->
+<!--        <table tableName="groups" domainObjectName="Groups" ></table>-->
+<!--        <table tableName="sites" domainObjectName="Sites" ></table>-->
+        <table tableName="student_info" domainObjectName="StudentInfo" ></table>
+<!--        <table tableName="student_tasks_groups" domainObjectName="studentTasksGroups" ></table>-->
+<!--        <table tableName="tasks" domainObjectName="Tasks" ></table>-->
+
+    </context>
+</generatorConfiguration>
